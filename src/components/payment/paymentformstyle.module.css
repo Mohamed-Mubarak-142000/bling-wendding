@@ -1,0 +1,29 @@
+.payment__main__grid {
+  padding: 1.5rem 2rem;
+}
+.payment__main__grid h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+.payment__main__grid p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-main-paragraphs);
+}
+.payment__main__grid form {
+  max-width: 100%;
+  margin: 2rem 0;
+}
+.payment__main__grid input {
+  border-radius: 4px;
+  background-color: #fff;
+}
+.payment__main__grid input .css-1nmdiq5-menu {
+  max-height: 300px;
+}
+
+@media (max-width: 440px) {
+  .payment__main__grid {
+    padding: 1rem 0.5rem;
+  }
+}

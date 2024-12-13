@@ -1,0 +1,85 @@
+.main_hero_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  position: relative;
+  padding-top: 1rem;
+}
+.imageContainer {
+  height: 562px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.hero_child {
+  position: absolute;
+  inset: 0;
+}
+
+.imageContainer img {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease; /* Optional zoom effect */
+}
+.imageContainer img {
+  cursor: grab;
+}
+
+.imageContainer:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+.coupon_div {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  border-radius: 50%;
+
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+.imageContainer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .main_hero_grid {
+    grid-template-columns: repeat(1, 1fr);
+
+    padding-top: 0;
+  }
+  /* .main_hero_grid > :first-child {
+    margin-bottom: 0.5rem;
+  } */
+  /* .main_hero_grid > :last-child {
+    margin-top: 0.5rem;
+  } */
+  .imageContainer {
+    height: 400px;
+  }
+  .coupon_div {
+    height: 40px;
+    width: 40px;
+    font-size: 0.85rem;
+  }
+}
+@keyframes image--Animation {
+  0% {
+    transform: scale(0.5);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}

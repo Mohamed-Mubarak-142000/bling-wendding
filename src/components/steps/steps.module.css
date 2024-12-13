@@ -1,0 +1,122 @@
+.steps_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  height: 651px;
+  margin: 2rem 0;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.img_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: 50% 100%;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.step_content {
+  background-color: var(--bg-overlay-color);
+  padding: 6rem 2rem;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 650px;
+}
+.step_content h1 {
+  font-size: 38px;
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+.step_content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-inline-start: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.step_content p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: "Nunito Sans", sans-serif;
+  margin: 1rem 0;
+  line-height: 1.8;
+  margin-inline-start: 2.5rem;
+  max-width: 560px;
+}
+.bottom_cont {
+  width: 477px;
+  margin: auto;
+  padding: 1rem 0 3rem 0;
+}
+.bottom_cont h1 {
+  font-size: 36px;
+  font-weight: 200;
+}
+@media (max-width: 896px) {
+  .steps_grid {
+    grid-template-columns: repeat(1, 1fr);
+    height: auto;
+  }
+  .video_container {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .img_container,
+  .video_background {
+    background-size: cover;
+    /* background-position: top center; */
+    background-attachment: scroll;
+    height: 400px;
+    order: -1;
+  }
+  .bottom_cont {
+    width: 96%;
+  }
+  .step_content {
+    height: auto !important;
+  }
+}
+@media (max-width: 440px) {
+  .main_Steps {
+    margin: 0;
+  }
+  .steps_grid {
+    margin-top: 1rem !important;
+    margin-bottom: 0;
+  }
+  .step_content {
+    padding: 1.5rem;
+  }
+
+  .step_content p,
+  .step_content h2 {
+    margin-inline-start: 0;
+  }
+  .step_content h2 {
+    font-size: 38px;
+    font-weight: 500;
+  }
+  .step_content p {
+    font-size: 20px;
+    max-width: 416px;
+  }
+  .bottom_cont {
+    width: 96%;
+    margin: auto;
+    padding: 1rem 0 2rem 0;
+  }
+  .bottom_cont h1 {
+    font-size: 25px;
+    font-weight: 200;
+    text-align: center;
+  }
+  .bottom_cont a {
+    width: 150px !important;
+  }
+}

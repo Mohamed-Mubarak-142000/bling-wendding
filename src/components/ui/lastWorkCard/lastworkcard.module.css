@@ -1,0 +1,25 @@
+.img_Container {
+  height: 655px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: var(--defaultImage);
+  transition: all ease 0.8s;
+}
+.card:hover .img_Container {
+  background-image: var(--hoverImage);
+}
+.card:hover {
+  cursor: grab;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.info p {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 140px;
+}

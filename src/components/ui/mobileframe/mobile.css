@@ -1,0 +1,67 @@
+.mobile_container {
+  border: 12px solid black;
+  width: 240px;
+  height: 473px;
+  border-radius: 40px;
+  position: relative;
+  box-shadow: 1px 1px 5px gray;
+  margin: 2px 0;
+}
+.specker_notch {
+  position: absolute;
+  height: 20px;
+  background-color: black;
+  width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0px 0px 15px 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  z-index: 2;
+}
+.speker_ele {
+  width: 35px;
+  height: 4px;
+  background-color: gray;
+  border-radius: 4px;
+}
+.camera_ele {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: gray;
+}
+.button {
+  position: absolute;
+  background-color: gray;
+  width: 4px;
+  border-radius: 4px 0px 0px 4px;
+}
+.left_top_btn {
+  height: 30px;
+  left: -16.7px;
+  top: 60px;
+}
+.left_avarage_btn {
+  top: 110px;
+  left: -16.7px;
+  height: 50px;
+}
+.left_bottom_btn {
+  top: 175px;
+  left: -16.7px;
+  height: 50px;
+}
+.right_btn {
+  right: -16.7px;
+  height: 70px;
+  border-radius: 0px 4px 4px 0px;
+  top: 120px;
+}
+.mobile_content {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}

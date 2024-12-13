@@ -1,0 +1,148 @@
+.footer {
+  padding: 1.5rem 2.5rem 3rem 2.5rem;
+  border-top: 8px solid;
+}
+.main_grid_footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  border-bottom: 1px solid black;
+}
+.title span {
+  font-size: 12px;
+}
+.title h1 {
+  font-weight: 200;
+  font-size: 32px;
+  margin: 0;
+  line-height: 0.6;
+}
+.gallery img {
+  height: 109px;
+  width: 345px;
+}
+.images_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  height: 100%;
+}
+.images_container a {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  min-height: 109px;
+}
+.footer ul {
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: 1rem;
+  margin-top: -10px;
+}
+.footer ul a {
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
+  color: black;
+  font-weight: 300;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.middle img {
+  width: 166px;
+  height: 72px;
+}
+.terms_polices_container {
+  display: flex;
+}
+.terms_Polices {
+  line-height: 2.3em;
+  font-size: 10px;
+  font-family: "Nunito Sans", sans-serif;
+  color: black;
+}
+.copyright {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  text-align: center;
+}
+.mobile_Logo {
+  display: none;
+}
+@media (max-width: 866px) {
+  .main_grid_footer {
+    grid-template-columns: 1fr;
+  }
+  .middle {
+    order: 3;
+  }
+  .gallery {
+    margin-bottom: 2rem;
+  }
+  .title::after {
+    width: 100%;
+  }
+}
+@media (max-width: 460px) {
+  .footer {
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 440px) {
+  .dis_menu_Mobile {
+    display: none;
+    padding-left: 0;
+  }
+  .footer {
+    padding: 1.2rem 0;
+  }
+  .title {
+    padding-left: 15px;
+  }
+  .mobile_Logo {
+    display: inline;
+    width: 125px !important;
+    height: 50px !important;
+  }
+  .middle img {
+    display: none;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: 125px calc(100% - 125px);
+    align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+  }
+  .gallery a img {
+    width: 100%;
+    height: auto;
+  }
+  .middle {
+    margin: 0;
+  }
+  .middle div {
+    margin-top: 0 !important;
+  }
+}

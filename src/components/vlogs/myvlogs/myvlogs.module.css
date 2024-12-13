@@ -1,0 +1,146 @@
+.main_vlog_section {
+  margin: 3rem 0;
+  position: relative;
+}
+.video_Container {
+  position: absolute;
+  top: -90px;
+}
+
+.first_black {
+  position: absolute;
+  width: 980px;
+  height: 310px;
+  background-color: black;
+  margin: auto;
+  left: 50%;
+  top: -120px;
+  transform: translateX(-50%);
+}
+.second_pink {
+  position: relative;
+  width: 90%;
+  min-width: 1180px;
+  height: 90vh;
+  background-color: var(--color-light-pink);
+  margin: 10rem auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.image_selected {
+  filter: brightness(0.6);
+  transition: all 0.3s ease;
+}
+
+.image_unselected {
+  filter: brightness(1.2);
+  transition: all 0.3s ease;
+}
+.other_Videos {
+  width: 920px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 8px;
+}
+.gallery_Item {
+  height: 125px;
+  width: 224px;
+  cursor: pointer;
+  position: relative;
+}
+.image_gallery {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery_Item:hover::after {
+  content: "";
+  background-image: url("/svgs/play.svg");
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 8px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.play_btn {
+  position: absolute;
+  padding: 0.6em 1.6em;
+  background-color: black;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.play_btn:hover {
+  opacity: 0.8;
+}
+.second_pink h2 {
+  display: none;
+}
+@media (max-width: 1220px) {
+  .second_pink {
+    width: 100%;
+    min-width: 100%;
+  }
+  .first_black {
+    width: 90%;
+  }
+  .video_Container {
+    width: 90%;
+  }
+  .other_Videos {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 620px) {
+  .first_black {
+    position: relative;
+    display: none;
+    width: 100%;
+  }
+  .video_Container {
+    position: relative;
+    width: 100%;
+    top: 0;
+  }
+  .other_Videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+    gap: 1rem;
+    margin: 0;
+  }
+  .second_pink {
+    height: auto;
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  .gallery_Item {
+    width: 100%;
+  }
+  .second_pink h2 {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    display: block;
+    margin: 2rem 0 1rem 1rem;
+    border-bottom: 1px solid black;
+  }
+}

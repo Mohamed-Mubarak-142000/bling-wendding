@@ -1,0 +1,17 @@
+.card_container {
+  height: 400px;
+  width: 320px;
+  position: relative;
+}
+.card_container img {
+  height: 85% !important;
+  position: relative !important;
+}
+.card_container h6 {
+  font-size: 1.5rem;
+  height: 15%;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 0.8rem;
+}

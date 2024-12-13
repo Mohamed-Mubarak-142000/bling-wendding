@@ -1,0 +1,73 @@
+.hero_container {
+  position: relative;
+  width: 94%;
+  margin: auto;
+  height: 772px;
+  background-image: url("/abouthero.webp");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+}
+.hero_container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.43) 43.5%,
+    rgba(215, 215, 215, 0.43) 100%
+  );
+}
+.hero_container h1 {
+  position: absolute;
+  top: 323px;
+  left: 80px;
+  width: 910px;
+  font-size: 4rem;
+  color: white;
+  z-index: 2;
+  line-height: 1.6;
+  font-weight: 500;
+}
+@media (max-width: 1144px) {
+  .hero_container {
+    width: 100%;
+    margin: 0;
+  }
+  .hero_container h1 {
+    font-size: 3rem;
+    width: 680px;
+  }
+}
+@media (max-width: 838px) {
+  .hero_container h1 {
+    font-size: 2.5rem;
+    width: 567px;
+    left: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero_container h1 {
+    font-size: 2rem;
+    width: 455px;
+    left: 40px;
+  }
+}
+@media (max-width: 535px) {
+  .hero_container h1 {
+    position: relative;
+    top: 520px;
+    font-size: 1.5rem;
+    width: 340px;
+    line-height: 1.7;
+    left: 20px;
+  }
+}
+@media (max-width: 385px) {
+  .hero_container h1 {
+    width: 94%;
+    left: 0;
+    margin: auto;
+  }
+}

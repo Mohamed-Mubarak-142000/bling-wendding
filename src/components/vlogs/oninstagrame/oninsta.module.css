@@ -1,0 +1,113 @@
+.main_grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  height: 100vh;
+  width: 90%;
+  margin: 2rem auto;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.main_grid div {
+  position: relative;
+}
+.main_grid div p {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.main_grid div:hover > p {
+  opacity: 1;
+}
+.gallery_item {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.row_1_2 {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  gap: 8px;
+}
+.col_1_1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.row_1_1 {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+}
+.row_2_1 {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  gap: 8px;
+}
+@media (max-width: 1200px) {
+  .main_grid {
+    grid-template-columns: repeat(1, 1fr);
+    height: auto;
+  }
+  .main_grid .col_1_1,
+  .main_grid .row_1_2,
+  .main_grid .row_2_1,
+  .main_grid .row_1_1 {
+    display: flex;
+    height: 400px;
+  }
+  .main_grid .col_1_1 div,
+  .main_grid .row_1_2 div,
+  .main_grid .row_2_1 div,
+  .main_grid .row_1_1 div {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+@media (max-width: 850px) {
+  .main_grid .row_1_2 {
+    height: auto;
+    flex-direction: column !important;
+  }
+  .main_grid .row_1_2 div {
+    height: 400px;
+  }
+  .main_grid .row_2_1 {
+    height: auto;
+    flex-direction: column !important;
+  }
+  .main_grid .row_2_1 div {
+    height: 400px;
+  }
+}
+@media (max-width: 530px) {
+  .col_1_1,
+  .row_1_1 {
+    flex-direction: row;
+  }
+
+  .main_grid .row_1_2 {
+    height: 400px;
+  }
+  .col_1_1 {
+    height: auto;
+  }
+  .col_1_1 div,
+  .row_1_1 div,
+  .main_grid .row_1_1 {
+    height: 200px !important;
+  }
+  .main_grid .row_1_2 div,
+  .main_grid .row_2_1 div {
+    height: 200px;
+  }
+}

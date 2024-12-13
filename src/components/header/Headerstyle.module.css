@@ -1,0 +1,120 @@
+.header_Container {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  background-color: #ded7d4;
+  transition: transform 0.6s ease; /* Smooth hide/show transition */
+  padding: 0 0 0.2rem 0;
+}
+.location {
+  background-color: #fff;
+}
+.location p {
+  font-size: 12px;
+  font-family: "Nunito Sans", sans-serif;
+  position: relative;
+  margin: 0px 0px 0px calc((100% - 980px) * 0.5);
+  left: 609px;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: start;
+  align-self: start;
+  display: flex;
+  align-items: baseline;
+
+  padding: 5px 0;
+}
+.location span {
+  margin-inline-end: 4px;
+}
+.logo {
+  position: relative;
+  left: 70px;
+}
+.logo img {
+  width: 160px;
+  height: 71px;
+}
+.header_Container nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ded7d4;
+  padding: 0.2rem 0;
+}
+
+.header_Container nav .links_Container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+}
+.links_List a {
+  padding: 10px 22px;
+  margin: 4px;
+  background: rgba(247, 247, 247, 0);
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-links-header);
+  transition: all 0.5s;
+}
+.links_List a:hover {
+  /* color: var(--color-links-hover); */
+  font-weight: 800;
+  text-decoration: underline;
+}
+.active {
+  color: var(--color-links-hover) !important;
+}
+.burgerIcon {
+  display: none;
+  z-index: 999;
+}
+.hidden {
+  display: none;
+}
+.scroll_hidden {
+  transform: translateY(-100%); /* Moves header up by 100% */
+}
+@media (max-width: 1260px) {
+  .header_Container nav .links_Container {
+    transform: translate(-150px, -50%);
+  }
+}
+@media (max-width: 1040px) {
+  .location p {
+    left: 0;
+
+    margin-inline-start: 14px;
+  }
+  .header_Container nav .links_Container {
+    display: none;
+  }
+  .header_Container nav {
+    justify-content: center;
+  }
+  .logo {
+    position: relative;
+    left: 0;
+
+    /* transform: translateX(48px); */
+  }
+  .burgerIcon {
+    display: block;
+    position: absolute;
+    left: 12px;
+  }
+  .scroll_hidden {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 440px) {
+  .location p {
+    font-size: 9px;
+  }
+}

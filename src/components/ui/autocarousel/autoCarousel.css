@@ -1,0 +1,7 @@
+@media (max-width: 520px) {
+  .slider-container .slick-track {
+    display: flex !important;
+    gap: 12px !important;
+  }
+}
+

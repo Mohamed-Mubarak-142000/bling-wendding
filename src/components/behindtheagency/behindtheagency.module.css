@@ -1,0 +1,124 @@
+.main_behind_agency {
+  margin: 5rem 0;
+  width: 1080px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  position: relative;
+  padding: 2rem 0.5rem;
+  margin-left: calc(100% - 1200px);
+}
+.title_Container {
+  position: relative;
+}
+.title_Container .Image {
+  height: 587px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.title_Container h1 {
+  position: absolute;
+  z-index: 9;
+  max-width: 160px;
+  margin: 0;
+  top: -1.3rem;
+  left: -3.5rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main_behind_agency p {
+  margin: 1rem 0 2rem 0;
+  font-size: 1.15rem;
+  line-height: 2.5;
+}
+.signature {
+  font-size: 2rem !important;
+  font-weight: 700;
+}
+.signature span {
+  font-family: "Kristi", cursive;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.main_behind_agency h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 1rem 0 2rem 0;
+}
+.img_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 1300px) {
+  .main_behind_agency {
+    margin: 5rem auto;
+  }
+}
+@media (max-width: 1220px) {
+  .main_behind_agency {
+    width: 86%;
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+@media (max-width: 1110px) {
+  .signature {
+    margin: 0 !important;
+  }
+}
+@media (max-width: 930px) {
+  .main_behind_agency {
+    grid-template-columns: 1fr;
+    margin: 2.5rem 0 1.5rem 0;
+  }
+
+  .img_container {
+    width: 360px;
+    margin: auto;
+  }
+  .texts h2,
+  .texts p {
+    margin: 1rem 0.5rem;
+  }
+}
+@media (max-width: 691px) {
+  .texts h2 {
+    font-size: 1.2rem;
+  }
+  .texts p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .texts .signature {
+    font-size: 1.05rem !important;
+  }
+  .texts .signature span {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 550px) {
+  .title_Container h1 {
+    left: 0.1rem;
+  }
+  .title_Container h2 {
+    font-size: 1.1rem;
+  }
+  .main_behind_agency {
+    width: 100%;
+  }
+  .img_container {
+    width: 96%;
+  }
+  .title_Container .Image {
+    width: 83%;
+    margin-left: auto;
+  }
+}

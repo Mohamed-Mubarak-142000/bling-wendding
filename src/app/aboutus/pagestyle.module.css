@@ -1,0 +1,30 @@
+.top_cont {
+  margin-top: 7rem;
+  background-color: var(--color-light-pink);
+  height: 2rem;
+}
+.main_about {
+  margin-top: 7rem 0;
+  position: relative;
+  background-color: var(--color-light-pink);
+  padding-bottom: 5rem;
+}
+.category_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 1060px;
+  margin: 0 auto;
+  gap: 3.1rem;
+}
+@media (max-width: 1156px) {
+  .category_grid {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}
+@media (max-width: 1144px) {
+  .top_cont {
+    display: none;
+  }
+}

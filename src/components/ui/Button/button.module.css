@@ -1,0 +1,14 @@
+.main_button {
+  color: var(--color-links-hover);
+  border: 1px solid var(--color-links-hover);
+  font-size: 1.1rem;
+  padding: 1rem 1.8rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: all linear .5s;
+}
+.main_button:hover {
+  color: #fff;
+  background-color: var(--color-links-hover);
+}

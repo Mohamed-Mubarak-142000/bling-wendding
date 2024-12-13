@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-main-titles: #1d1d1f;
+  --color-main-paragraphs: #454544;
+  --second-bg-color: #f7f7f5;
+  --bg-overlay-color: rgb(228, 222, 222);
+  --color-links-header: #000000;
+  --color-links-hover: #6c5656;
+  --color-dark-gray: #d9d3d3;
+  --color-light-pink: #ded7d4;
+}
+html {
+  scroll-behavior: smooth !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  font-family: "Nunito Sans", sans-serif;
+}
+ul {
+  list-style: none;
+  display: flex;
+}
+a {
+  text-decoration: none;
+}
+img {
+  object-fit: cover;
+}
+.main_Margin {
+  margin-top: 110px;
+}
+.skeliton {
+  animation-name: skeliton_animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+/**Forms Style**/
+.country-list {
+  display: flex;
+  flex-direction: column;
+}
+.react-tel-input input {
+  width: 100% !important;
+  height: 42px !important;
+  background-color: rgb(249 250 251) !important;
+}
+
+form button {
+  background-color: var(--color-links-hover) !important;
+}
+@keyframes skeliton_animation {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 440px) {
+  .slick-slide > div {
+    display: flex;
+    justify-content: center;
+  }
+}

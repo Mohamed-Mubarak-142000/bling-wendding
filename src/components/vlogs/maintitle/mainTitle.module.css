@@ -1,0 +1,12 @@
+.main_title h1 {
+  text-align: center;
+  margin: 0;
+  margin: 6rem 0 2rem 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+@media (max-width: 440px) {
+  .main_title h1 {
+    font-size: 2.5rem;
+  }
+}
