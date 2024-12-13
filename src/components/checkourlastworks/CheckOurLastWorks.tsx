@@ -1,70 +1,64 @@
 "use client";
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./LastWorks.module.css";
 const LastWorkCard = React.lazy(
   () => import("../ui/lastWorkCard/LastWorkCard")
 );
 import latestWork from "@/data/latestWork";
 
-const debounce = (func: Function, delay: number) => {
-  let timeout: NodeJS.Timeout;
-  return (...args: any) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), delay);
-  };
-};
-
 function CheckOurLastWorks() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+
   const [maxScrollValue, setMaxScrollValue] = useState(0);
   const [translateX, setTranslateX] = useState(0); // Track the translateX value
 
-  const updateWindowWidth = useCallback(() => {
-    const newMaxScrollValue = 1110 - (window.innerWidth - 580);
-    setMaxScrollValue(newMaxScrollValue);
-  }, []);
-
+  // Update window width and max scroll value on resize
   useEffect(() => {
-    updateWindowWidth();
-    const debouncedUpdateWindowWidth = debounce(updateWindowWidth, 200);
-    window.addEventListener("resize", debouncedUpdateWindowWidth);
-
-    return () => {
-      window.removeEventListener("resize", debouncedUpdateWindowWidth);
+    const updateWindowWidth = () => {
+      const newMaxScrollValue = 1110 - (window.innerWidth - 580);
+      setMaxScrollValue(newMaxScrollValue);
     };
-  }, [updateWindowWidth]);
 
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    window.addEventListener("resize", updateWindowWidth);
+    updateWindowWidth(); // Call initially to set the max scroll value
+    return () => {
+      window.removeEventListener("resize", updateWindowWidth);
+    };
+  }, []);
+
+  // When mouse button is pressed down
+  const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
-    setIsDragging(true);
+    setIsDragging(true); // Start dragging
+    setStartX(e.clientX); // Capture the initial X position
+  };
+
+  // When mouse is moved (only works when dragging)
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+
+    const distanceMoved = e.clientX - startX; // Calculate how far the mouse has moved
+    const newTranslateX = translateX + distanceMoved; // Update translateX value
+
+    // Ensure the translateX stays within bounds
+    if (newTranslateX > 0) {
+      setTranslateX(0); // Prevent scrolling beyond the right edge
+    } else if (newTranslateX < -maxScrollValue) {
+      setTranslateX(-maxScrollValue); // Prevent scrolling beyond the left edge
+    } else {
+      setTranslateX(newTranslateX); // Update translateX value
+    }
+
+    // Update startX to calculate the next distance
     setStartX(e.clientX);
-  }, []);
+  };
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent) => {
-      if (!isDragging || !scrollRef.current) return;
-
-      const distanceMoved = e.clientX - startX;
-      const newTranslateX = translateX + distanceMoved;
-
-      if (newTranslateX > 0) {
-        setTranslateX(0);
-      } else if (newTranslateX < -maxScrollValue) {
-        setTranslateX(-maxScrollValue);
-      } else {
-        setTranslateX(newTranslateX);
-      }
-
-      setStartX(e.clientX);
-    },
-    [isDragging, startX, maxScrollValue, translateX]
-  );
-
-  const handleMouseUpOrLeave = useCallback(() => {
-    setIsDragging(false);
-  }, []);
+  // Stop dragging when mouse is released or leaves the container
+  const handleMouseUpOrLeave = () => {
+    setIsDragging(false); // Stop dragging
+  };
 
   return (
     <section className={styles.main_latest_works}>
@@ -83,21 +77,18 @@ function CheckOurLastWorks() {
               onMouseLeave={handleMouseUpOrLeave}
               style={{
                 cursor: isDragging ? "grabbing" : "grab",
-                transform: `translateX(${translateX}px)`,
-                transition: "transform 0s",
+                transform: `translateX(${translateX}px)`, // Apply translateX to move the container
+                transition: "transform 0s", // Disable transition during drag
               }}
             >
-              {/* Lazy-loaded LastWorkCard */}
-              <React.Suspense fallback={<div>Loading...</div>}>
-                {latestWork.map((item, index) => (
-                  <LastWorkCard
-                    defaultImage={item.defaultImage}
-                    hoverImage={item.hoverImage}
-                    key={index}
-                    index={index}
-                  />
-                ))}
-              </React.Suspense>
+              {latestWork.map((item, index) => (
+                <LastWorkCard
+                  defaultImage={item.defaultImage}
+                  hoverImage={item.hoverImage}
+                  key={index}
+                  index={index}
+                />
+              ))}
             </div>
           </div>
         </div>

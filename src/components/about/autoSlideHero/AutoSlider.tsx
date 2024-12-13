@@ -10,7 +10,7 @@ function AutoSlider() {
       line2: carouselData.line2,
       line3: carouselData.line3,
     }),
-    [carouselData]
+    []
   );
 
   const getReverse = (lineIndex: number) => {

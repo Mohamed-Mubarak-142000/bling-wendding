@@ -75,7 +75,7 @@ const Header = () => {
           )}
         </li>
       )),
-    [links, handleLinkClick] // Only recompute when links or handleLinkClick change
+    [handleLinkClick] // Only recompute when links or handleLinkClick change
   );
 
   return (

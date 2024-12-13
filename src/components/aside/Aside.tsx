@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useCallback, useMemo } from "react";
 import styles from "./Aside.module.css";
 import links from "@/data/links";
@@ -41,7 +42,7 @@ function Aside({ isOpen, setOpen }: AsideProps) {
   const router = useRouter();
 
   // Memoizing the links list to avoid unnecessary re-renders
-  const memoizedLinks = useMemo(() => links, [links]);
+  const memoizedLinks = useMemo(() => links, []);
 
   // Memoizing the handleLinkClick function to prevent unnecessary re-creations
   const handleLinkClick = useCallback(
